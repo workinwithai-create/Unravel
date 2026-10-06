@@ -1,0 +1,52 @@
+:root {
+  --bg: #14110e;
+  --ink: #f3eadf;
+  --dim: #b4a89a;
+  --line: #3a322b;
+  --accent: #e07a3d;
+  --paper: #1e1915;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+header, main, footer { max-width: 980px; margin: 0 auto; padding: 1.2rem; }
+header { display: flex; justify-content: space-between; gap: 1rem; align-items: end; }
+h1 { font-weight: 500; letter-spacing: -0.03em; margin: 0; font-size: 2.6rem; }
+h2 { margin: 0 0 0.6rem; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+.kicker { color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.72rem; margin: 0; }
+.lede { color: var(--dim); max-width: 40rem; }
+.status { font-variant-numeric: tabular-nums; color: var(--accent); }
+main { display: grid; gap: 1rem; }
+.panel { background: var(--paper); border: 1px solid var(--line); padding: 1rem; }
+.user { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
+label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: var(--dim); }
+input, select, button {
+  font: inherit;
+  color: var(--ink);
+  background: #2a241f;
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+}
+button { cursor: pointer; }
+button.on, .sides button.on { background: var(--accent); color: #1a120c; border-color: var(--accent); }
+.sides, .transport, .mutes { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.recipe { display: block; width: 100%; text-align: left; margin-bottom: 0.35rem; }
+.blurb, .note, footer { color: var(--dim); font-size: 0.92rem; }
+.bars { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.35rem; margin-top: 0.8rem; }
+.bar { border: 1px solid var(--line); min-height: 2.4rem; display: grid; place-items: center; font-size: 0.8rem; }
+.bar.now { background: var(--accent); color: #1a120c; }
+.tap {
+  position: fixed; inset: 0; background: rgba(12,10,8,0.92);
+  display: grid; place-items: center; z-index: 5; text-align: center;
+}
+.tap.hide { display: none; }
+.tap button { font-size: 1.2rem; padding: 0.8rem 1.2rem; }
+@media (max-width: 720px) {
+  .user { grid-template-columns: 1fr 1fr; }
+  header { flex-direction: column; align-items: start; }
+}

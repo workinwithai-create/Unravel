@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unravel — chorus is not a louder verse</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="tap" class="tap">
+    <button id="tapBtn" type="button">Tap to start audio</button>
+    <p>Samples load after the first tap. iOS silent switch mutes Web Audio.</p>
+  </div>
+  <header>
+    <div>
+      <p class="kicker">WorkinWithAI · finish desk</p>
+      <h1>Unravel</h1>
+      <p class="lede">The chorus is not a louder verse. Side A is the tight print. Side B opens the grid: longer notes, hats out, flute color that was not in the verse.</p>
+    </div>
+    <div class="status" id="status">Waiting for a tap.</div>
+  </header>
+  <main>
+    <section class="panel user">
+      <h2>Your track</h2>
+      <label>BPM <input id="bpm" type="number" min="60" max="180" value="92" /></label>
+      <label>Key
+        <select id="key">
+          <option>A minor</option><option>C major</option><option>D minor</option>
+          <option>E minor</option><option>G major</option><option>F major</option>
+          <option>Bb major</option><option>Eb major</option>
+        </select>
+      </label>
+      <label>Four chords <input id="chords" type="text" value="Am F C G" spellcheck="false" /></label>
+      <label>Bars
+        <select id="bars"><option value="4">4</option><option value="8" selected>8</option></select>
+      </label>
+      <div class="sides">
+        <button type="button" data-side="A" id="sideA">A · tight verse</button>
+        <button type="button" data-side="B" id="sideB" class="on">B · unravel</button>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Recipes</h2>
+      <div id="recipes"></div>
+      <p id="blurb" class="blurb"></p>
+    </section>
+    <section class="panel">
+      <h2>Chairs</h2>
+      <div id="mutes" class="mutes"></div>
+      <div class="transport">
+        <button type="button" id="play">Play</button>
+        <button type="button" id="stop">Stop</button>
+        <button type="button" id="wav">Export WAV</button>
+        <button type="button" id="wavTail">WAV with tail</button>
+        <button type="button" id="mid">Export MIDI</button>
+      </div>
+      <div id="barsView" class="bars"></div>
+      <p class="note">Playhead follows the audio clock. Changes land on the next step. Export is 48 kHz, 24-bit, downbeat at sample 0, tail folded for a seamless loop.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Free desk. Live FluidR3 flute, nylon, and kit hits — not oscillators. Audio stays in the tab.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
